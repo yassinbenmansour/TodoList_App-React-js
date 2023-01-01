@@ -5,7 +5,7 @@
   
 
 
-    <img src="todolistapp/public/Todo.png" alt="todo image">
+    <img src="./todolistapp/public/Todo.png" alt="todo image">
 
 In the project directory, you can run:
 ### `npm start`
