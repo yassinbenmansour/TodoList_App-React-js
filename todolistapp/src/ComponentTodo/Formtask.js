@@ -1,60 +1,70 @@
 import React, { useState } from 'react'
-import Task from './Task';
+import Task from './Task'
 import {v4 as uuidv4} from 'uuid';
-
 
 
 export default function Formtask() {
 
-    const [tache,setTache] = useState([
+    const [Taches,setTaches] = useState([
         {id:uuidv4(),nom:"sport"},
         {id:uuidv4(),nom:"football"},
         {id:uuidv4(),nom:"coding session"}
-
     ])
 
-    const [ztache , setZtache]= useState('');
+
+    const [Tache , setTache] = useState('');
+
 
     const zidtache = () => {
-        let ntaches = [...tache];
-        let ntache = {} ;
 
-        ntache.id = uuidv4();
-        ntache.nom = ztache ;
-        ntaches.push(ntache);
+             //GA3 element affecter l Nelements
+            let Nelements = [...Taches];
 
-        setTache(ntaches);
-        setZtache("");
-    }
+            let Nelement = {};
 
 
+            //line  Nelement sous form d'obje  {id:uuidv4(),nom:"chi haja"},
 
+            Nelement.id = uuidv4();
+            Nelement.nom = Tache;
+
+
+            // zadt objet element f nelemnts li hiya array
+            Nelements.push(Nelement);
+
+
+            setTaches(Nelements);
+
+            setTache("");
+
+        }
 
   return (
     <div>
 
-        <div className="container mt-5 ">
-
-        <h1>Todo List App</h1>
+        <h1>Todo list</h1>
         <form>
-        Entre une tache :
-        <input type="text" className='form-control '  onChange={(e)=>{setZtache(e.target.value)}} />
-        <br />
-        <input type="button" onClick={zidtache} className='btn btn-primary ' value="Ajouter " />
+            <label>Entre une Tache :</label>
+            <input type="text" onChange={(el) => {setTache(el.target.value)}} />
+            
+            <input type="button" value="Ajouter une tache" className='btn btn-primary' onClick={zidtache} />
         </form>
-        <br />
-        <br />
-        <h1>Todo List : Task</h1>
+
+
+        <h1>List des Taches :</h1>
 
         <ul>
+
             {
-                tache.map((t) => {
-                    return <li key={t.id}> <Task  txt={t.nom}/></li>
-                }) 
+                Taches.map((e) => {
+                    return <li key={e.id}>       <Task txt={e.nom} /></li>
+                })
             }
         </ul>
-        </div>
-      
+
+        
+        
+
     </div>
   )
 }
