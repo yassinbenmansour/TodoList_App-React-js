@@ -17,13 +17,13 @@ export default function Formtask() {
 
     const zidtache = () => {
 
-             //GA3 element affecter l Nelements
+             //GA3 element affecter l Nelements  spread operator
             let Nelements = [...Taches];
 
             let Nelement = {};
 
 
-            //line  Nelement sous form d'obje  {id:uuidv4(),nom:"chi haja"},
+            //line  Nelement sous form d'objet  {id:uuidv4(),nom:"chi haja"},
 
             Nelement.id = uuidv4();
             Nelement.nom = Tache;
