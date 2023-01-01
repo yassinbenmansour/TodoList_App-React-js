@@ -6,10 +6,12 @@ import {v4 as uuidv4} from 'uuid';
 export default function Formtask() {
 
     const [Taches,setTaches] = useState([
-        //example delete array no problrm
+        /*
         {id:uuidv4(),nom:"sport"},
         {id:uuidv4(),nom:"football"},
         {id:uuidv4(),nom:"coding session"}
+        */
+ 
     ])
 
 
@@ -45,7 +47,7 @@ export default function Formtask() {
 
             let ntache = Taches.filter((e)=>{
 
-                return  e.id != idp ;
+                return  e.id !== idp ;
 
             })
 
