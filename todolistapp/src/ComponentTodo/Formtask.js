@@ -6,6 +6,7 @@ import {v4 as uuidv4} from 'uuid';
 export default function Formtask() {
 
     const [Taches,setTaches] = useState([
+        //example delete array no problrm
         {id:uuidv4(),nom:"sport"},
         {id:uuidv4(),nom:"football"},
         {id:uuidv4(),nom:"coding session"}
@@ -39,6 +40,19 @@ export default function Formtask() {
 
         }
 
+
+        const deleteFunction = (idp) => {
+
+            let ntache = Taches.filter((e)=>{
+
+                return  e.id != idp ;
+
+            })
+
+                setTaches(ntache);
+
+        }
+
   return (
     <div>
 
@@ -50,14 +64,17 @@ export default function Formtask() {
             <input type="button" value="Ajouter une tache" className='btn btn-primary' onClick={zidtache} />
         </form>
 
+        <br />
+        <br />
+
 
         <h1>List des Taches :</h1>
 
-        <ul>
+        <ul style={{listStyle:'none' }}>
 
             {
                 Taches.map((e) => {
-                    return <li key={e.id}>       <Task txt={e.nom} /></li>
+                    return <li key={e.id}>       <Task delf={()=> {deleteFunction(e.id)}} txt={e.nom} /></li>
                 })
             }
         </ul>
